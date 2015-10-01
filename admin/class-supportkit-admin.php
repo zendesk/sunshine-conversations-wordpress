@@ -108,8 +108,6 @@ class Supportkit_Admin {
 	 */
 	public function add_menu() {
 		// add_options_page( $page_title, $menu_title, $capability, $menu_slug, $callback );
-		
-		echo($this->plugin_name);
 
 		add_options_page(
 			apply_filters( $this->plugin_name . '-settings-page-title', __( 'SupportKit Settings', 'supportkit-wordpress' ) ),
@@ -192,7 +190,7 @@ class Supportkit_Admin {
 	 * @since 		1.0.0
 	 * @return 		mixed 			The settings field
 	 */
-	public function display_options_field() {
+	public function app_token_field() {
 
 		$options 	= get_option( $this->plugin_name . '-options' );
 		$option 	= 0;
