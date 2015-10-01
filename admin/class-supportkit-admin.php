@@ -113,7 +113,7 @@ class Supportkit_Admin {
 
 		add_options_page(
 			apply_filters( $this->plugin_name . '-settings-page-title', __( 'SupportKit Settings', 'supportkit-wordpress' ) ),
-			apply_filters( $this->plugin_name . '-settings-menu-title', __( 'SupportKit Settings', 'supportkit-wordpress' ) ),
+			apply_filters( $this->plugin_name . '-settings-menu-title', __( 'SupportKit', 'supportkit-wordpress' ) ),
 			'manage_options',
 			$this->plugin_name,
 			array( $this, 'options_page' )
@@ -172,4 +172,39 @@ class Supportkit_Admin {
 		);
 
 	} // register_settings()
+
+	/**
+	 * Creates a settings section
+	 *
+	 * @since 		1.0.0
+	 * @param 		array 		$params 		Array of parameters for the section
+	 * @return 		mixed 						The settings section
+	 */
+	public function display_options_section( $params ) {
+
+		echo '<p>' . $params['title'] . '</p>';
+
+	} // display_options_section()
+
+	/**
+	 * Creates a settings field
+	 *
+	 * @since 		1.0.0
+	 * @return 		mixed 			The settings field
+	 */
+	public function display_options_field() {
+
+		$options 	= get_option( $this->plugin_name . '-options' );
+		$option 	= 0;
+
+		if ( ! empty( $options['app-token'] ) ) {
+
+			$option = $options['app-token'];
+
+		}
+
+		?><input type="text" id="<?php echo $this->plugin_name; ?>-options'[app-token]" name="<?php echo $this->plugin_name; ?>-options'[app-token]" value="1" /><?php
+
+	} // display_options_field()
+
 }
