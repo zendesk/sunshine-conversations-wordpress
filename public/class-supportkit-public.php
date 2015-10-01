@@ -122,7 +122,7 @@ class Supportkit_Public {
 		?>
 		<!-- SK Init -->
 		<script>SupportKit.init({appToken: '<?php echo($options[app-token]);?>'});</script>";
-		?>php
+		<?php
 	}	
 
 }
