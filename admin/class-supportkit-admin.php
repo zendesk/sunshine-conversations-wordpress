@@ -125,9 +125,9 @@ class Supportkit_Admin {
 		?><h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 		<form method="post" action="options.php"><?php
 
-		//settings_fields( 'supportkit-wordpress-options' );
+		settings_fields( $this->plugin_name . '-options' );
 
-		//do_settings_sections( $this->plugin_name );
+		do_settings_sections( $this->plugin_name );
 
 		submit_button( 'Save Settings' );
 
@@ -135,4 +135,40 @@ class Supportkit_Admin {
 
 	} // options_page()	
 
+	/**
+	 * Registers plugin settings, sections, and fields
+	 *
+	 * @since 		1.0.0
+	 * @return 		void
+	 */
+	public function register_settings() {
+
+		// register_setting( $option_group, $option_name, $sanitize_callback );
+
+		register_setting(
+			$this->plugin_name . '-options',
+			$this->plugin_name . '-options',
+			array( $this, 'validate_options' )
+		);
+
+		// add_settings_section( $id, $title, $callback, $menu_slug );
+
+		add_settings_section(
+			$this->plugin_name . '-basic-info',
+			apply_filters( $this->plugin_name . '-display-section-title', __( 'Basic Info', 'supportkit-wordpress' ) ),
+			array( $this, 'display_options_section' ),
+			$this->plugin_name
+		);
+
+		// add_settings_field( $id, $title, $callback, $menu_slug, $section, $args );
+
+		add_settings_field(
+			'app-token',
+			apply_filters( $this->plugin_name . '-app-token-label', __( 'App Token', 'supportkit-wordpress' ) ),
+			array( $this, 'app_token_field' ),
+			$this->plugin_name,
+			$this->plugin_name . '-basic-info'
+		);
+
+	} // register_settings()
 }
