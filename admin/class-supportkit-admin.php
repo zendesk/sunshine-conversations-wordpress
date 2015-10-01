@@ -207,4 +207,31 @@ class Supportkit_Admin {
 
 	} // display_options_field()
 
+	/**
+	 * Validates saved options
+	 *
+	 * @since 		1.0.0
+	 * @param 		array 		$input 			array of submitted plugin options
+	 * @return 		array 						array of validated plugin options
+	 */
+	public function validate_options( $input ) {
+
+		$valid = array();
+
+		if ( isset( $input['app-token'] ) ) {
+
+			$app_token 			= trim( $input['app-token'] );
+			$valid['app-token'] 	= sanitize_text_field( $app_token );
+
+			if ( $valid['app-token'] != $input['app-token'] ) {
+
+				add_settings_error( 'app-token', 'app-token-error', __( 'App token error.', 'supportkit-wordpress' ), 'error' );
+
+			}
+
+		}
+
+		return $valid;
+
+	} // validate_options()
 }
