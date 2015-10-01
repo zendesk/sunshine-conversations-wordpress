@@ -118,7 +118,8 @@ class Supportkit_Public {
 		 * class.
 		 */
 		$options = get_option( $this->plugin_name . '-options' );
-
+		echo "<h1> SUPPORTKIT! </h1>";
+		echo $options[app-token]
 		?>
 		<!-- SK Init -->
 		<script>SupportKit.init({appToken: '<?php echo($options[app-token]);?>'});</script>";
