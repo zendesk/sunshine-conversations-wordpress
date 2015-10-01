@@ -107,8 +107,8 @@ class Supportkit_Admin {
 	 * @return 		void
 	 */
 	public function add_menu() {
-		?> <h1>test</h1><?
-		
+		?> <h1>test</h1><?php
+
 		// add_options_page( $page_title, $menu_title, $capability, $menu_slug, $callback );
 
 		add_options_page(
