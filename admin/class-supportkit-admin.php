@@ -230,7 +230,8 @@ class Supportkit_Admin {
 			}
 
 		}
-
+		echo $valid;
+		
 		return $valid;
 
 	} // validate_options()
