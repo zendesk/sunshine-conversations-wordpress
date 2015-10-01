@@ -180,9 +180,8 @@ class Supportkit_Admin {
 	 */
 	public function display_options_section( $params ) {
 		?> 
-		<p>Connect
-
-
+		<p>SupportKit lets you speak to your web visitors or app users from your inbox, Slack, Help Scout or favourite CRM. This plugin makes connecting your WordPress site to SupportKit a breeze.</p>
+		<p>It's free to use on the web. Get an app token by logging in (or signing up for free) at <a href="https://app.supportkit.io">app.supportkit.io</a>. Paste this token into the field below and you'll be ready for action.</p>
 		<?php
 	} // display_options_section()
 
