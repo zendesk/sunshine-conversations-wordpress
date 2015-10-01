@@ -154,7 +154,7 @@ class Supportkit_Admin {
 
 		add_settings_section(
 			$this->plugin_name . '-basic-info',
-			apply_filters( $this->plugin_name . '-display-section-title', __( 'Basic Info', 'supportkit-wordpress' ) ),
+			apply_filters( $this->plugin_name . '-display-section-title', __( 'Connecting SupportKit to your WordPress Site', 'supportkit-wordpress' ) ),
 			array( $this, 'display_options_section' ),
 			$this->plugin_name
 		);
@@ -179,9 +179,11 @@ class Supportkit_Admin {
 	 * @return 		mixed 						The settings section
 	 */
 	public function display_options_section( $params ) {
+		?> 
+		<p>Connec
 
-		echo '<p>' . $params['title'] . '</p>';
 
+		<?php
 	} // display_options_section()
 
 	/**
@@ -201,7 +203,7 @@ class Supportkit_Admin {
 
 		}
 
-		?><input type="text" id="<?php echo $this->plugin_name; ?>-options'[app-token]" name="<?php echo $this->plugin_name; ?>-options'[app-token]" value="1" /><?php
+		?><input type="text" id="<?php echo $this->plugin_name; ?>-options'[app-token]" name="<?php echo $this->plugin_name; ?>-options'[app-token]" value="<?php echo esc_attr( $option ); ?>" /><?php
 
 	} // display_options_field()
 

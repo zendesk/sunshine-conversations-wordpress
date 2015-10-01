@@ -117,8 +117,10 @@ class Supportkit_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		$options = get_option( $this->plugin_name . '-options' );
+
 		echo "<!-- SK Init -->";
-		echo "<script>SupportKit.init({appToken: 'ec1ul1os23l6kln4dzpw79uh6'});</script>";
+		echo "<script>SupportKit.init({appToken: '?>$options['app-token']<?php'});</script>";
 	}	
 
 }
