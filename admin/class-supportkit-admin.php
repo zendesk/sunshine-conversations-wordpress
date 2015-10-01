@@ -100,4 +100,39 @@ class Supportkit_Admin {
 
 	}
 
+	/**
+	 * Adds a settings page link to a menu
+	 *
+	 * @since 		1.0.0
+	 * @return 		void
+	 */
+	public function add_menu() {
+
+		// add_options_page( $page_title, $menu_title, $capability, $menu_slug, $callback );
+
+		add_options_page(
+			apply_filters( $this->plugin_name . '-settings-page-title', __( 'SupportKit Settings', 'supportkit-wordpress' ) ),
+			apply_filters( $this->plugin_name . '-settings-menu-title', __( 'SupportKit Settings', 'supportkit-wordpress' ) ),
+			'manage_options',
+			$this->plugin_name,
+			array( $this, 'options_page' )
+		);
+
+	} // add_menu()	
+
+	public function options_page() {
+
+		?><h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+		<form method="post" action="options.php"><?php
+
+		//settings_fields( 'supportkit-wordpress-options' );
+
+		//do_settings_sections( $this->plugin_name );
+
+		submit_button( 'Save Settings' );
+
+		?></form><?php
+
+	} // options_page()	
+
 }
