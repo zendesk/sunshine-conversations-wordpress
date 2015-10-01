@@ -203,7 +203,7 @@ class Supportkit_Admin {
 
 		}
 
-		?><input type="text" id="<?php echo $this->plugin_name; ?>-options'[app-token]" name="<?php echo $this->plugin_name; ?>-options'[app-token]" value="<?php echo esc_attr( $option ); ?>"><?php
+		?><input type="text" id="<?php echo $this->plugin_name; ?>-options[app-token]" name="<?php echo $this->plugin_name; ?>-options[app-token]" value="<?php echo esc_attr( $option ); ?>"><?php
 
 	} // display_options_field()
 
