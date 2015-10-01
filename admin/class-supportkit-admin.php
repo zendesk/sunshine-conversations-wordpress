@@ -107,9 +107,9 @@ class Supportkit_Admin {
 	 * @return 		void
 	 */
 	public function add_menu() {
-		?> <h1>test</h1><?php
-
 		// add_options_page( $page_title, $menu_title, $capability, $menu_slug, $callback );
+		
+		echo($this->plugin_name);
 
 		add_options_page(
 			apply_filters( $this->plugin_name . '-settings-page-title', __( 'SupportKit Settings', 'supportkit-wordpress' ) ),
