@@ -5,7 +5,7 @@
 ## Installation
 
 1. [Sign up for Smooch](https://app.smooch.io/signup?utm_source=wordpress) and get an "App token". Copy it to your clipboard.
-2. Download the plugin zip file from GitHub
+2. Download the plugin [zip file](https://github.com/smooch/smooch-wordpress/archive/master.zip) from GitHub
 3. Upload the plugin zip file to your WordPress site
 4. Visit the Smooch settings page to paste in your app token. 
 5. You can now speak to your web visitors!
