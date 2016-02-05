@@ -117,12 +117,20 @@ class Smooch_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		$options = get_option( $this->plugin_name . '-options' );
-
-		?>
+		$options = get_option( $this->plugin_name . '-options' );	?>
 		<!-- SK Init -->
-		<script>Smooch.init({appToken: '<?php echo($options['app-token']);?>'});</script>";
+		<script>Smooch.init(
+			{
+				appToken: '<?php echo($options['app-token']);?>',
+			    customText: {
+        			headerText: '<?php echo($options['header-text']);?>',
+        			inputPlaceholder: '<?php echo($options['input-placeholder']);?>',
+        			sendButtonText: '<?php echo($options['send-button-text']);?>',
+        			introText: '<?php echo($options['intro-text']);?>'
+    			}
+			});
+		</script>;
+
 		<?php
 	}	
-
 }

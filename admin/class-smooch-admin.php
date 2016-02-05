@@ -141,7 +141,6 @@ class Smooch_Admin {
 	 * @return 		void
 	 */
 	public function register_settings() {
-
 		// register_setting( $option_group, $option_name, $sanitize_callback );
 
 		register_setting(
@@ -169,6 +168,37 @@ class Smooch_Admin {
 			$this->plugin_name . '-basic-info'
 		);
 
+		add_settings_field(
+			'header-text',
+			apply_filters( $this->plugin_name . '-header-text-label', __( 'Header Text', 'smooch-wordpress' ) ),
+			array( $this, 'header_text_field' ),
+			$this->plugin_name,
+			$this->plugin_name . '-basic-info'
+		);
+
+		add_settings_field(
+			'input-placeholder',
+			apply_filters( $this->plugin_name . '-input-placeholder-label', __( 'Input Placeholder', 'smooch-wordpress' ) ),
+			array( $this, 'input_placeholder_field' ),
+			$this->plugin_name,
+			$this->plugin_name . '-basic-info'
+		);
+
+		add_settings_field(
+			'send-button-text',
+			apply_filters( $this->plugin_name . '-send-button-text-label', __( 'Send Button Text', 'smooch-wordpress' ) ),
+			array( $this, 'send_button_text_field' ),
+			$this->plugin_name,
+			$this->plugin_name . '-basic-info'
+		);
+
+		add_settings_field(
+			'intro-text',
+			apply_filters( $this->plugin_name . '-intro-text-label', __( 'Intro Text', 'smooch-wordpress' ) ),
+			array( $this, 'intro_text_field' ),
+			$this->plugin_name,
+			$this->plugin_name . '-basic-info'
+		);
 	} // register_settings()
 
 	/**
@@ -197,12 +227,86 @@ class Smooch_Admin {
 		$option 	= 0;
 
 		if ( ! empty( $options['app-token'] ) ) {
-
 			$option = $options['app-token'];
-
 		}
 
 		?><input type="text" id="<?php echo $this->plugin_name; ?>-options[app-token]" name="<?php echo $this->plugin_name; ?>-options[app-token]" value="<?php echo esc_attr( $option ); ?>"><?php
+
+	} // display_options_field()
+
+	/**
+	 * Creates a settings field
+	 *
+	 * @since 		1.0.0
+	 * @return 		mixed 			The settings field
+	 */
+	public function header_text_field() {
+
+		$options 	= get_option( $this->plugin_name . '-options' );
+		$option 	= 'How can we help?';
+
+		if ( ! empty( $options['header-text'] ) ) {
+			$option = $options['header-text'];
+		}
+
+		?><input type="text" id="<?php echo $this->plugin_name; ?>-options[header-text]" name="<?php echo $this->plugin_name; ?>-options[header-text]" value="<?php echo esc_attr( $option ); ?>"><?php
+
+	} // display_options_field()
+
+	/**
+	 * Creates a settings field
+	 *
+	 * @since 		1.0.0
+	 * @return 		mixed 			The settings field
+	 */
+	public function input_placeholder_field() {
+
+		$options 	= get_option( $this->plugin_name . '-options' );
+		$option 	= 'Type a message...';
+
+		if ( ! empty( $options['input-placeholder'] ) ) {
+			$option = $options['input-placeholder'];
+		}
+
+		?><input type="text" id="<?php echo $this->plugin_name; ?>-options[input-placeholder]" name="<?php echo $this->plugin_name; ?>-options[input-placeholder]" value="<?php echo esc_attr( $option ); ?>"><?php
+
+	} // display_options_field()
+
+	/**
+	 * Creates a settings field
+	 *
+	 * @since 		1.0.0
+	 * @return 		mixed 			The settings field
+	 */
+	public function send_button_text_field() {
+
+		$options 	= get_option( $this->plugin_name . '-options' );
+		$option 	= 'Send';
+
+		if ( ! empty( $options['send-button-text'] ) ) {
+			$option = $options['send-button-text'];
+		}
+
+		?><input type="text" id="<?php echo $this->plugin_name; ?>-options[send-button-text]" name="<?php echo $this->plugin_name; ?>-options[send-button-text]" value="<?php echo esc_attr( $option ); ?>"><?php
+
+	} // display_options_field()
+
+	/**
+	 * Creates a settings field
+	 *
+	 * @since 		1.0.0
+	 * @return 		mixed 			The settings field
+	 */
+	public function intro_text_field() {
+
+		$options 	= get_option( $this->plugin_name . '-options' );
+		$option 	= 'This is the beginning of your conversation.<br/> Ask us anything!';
+
+		if ( ! empty( $options['intro-text'] ) ) {
+			$option = $options['intro-text'];
+		}
+
+		?><input type="text" id="<?php echo $this->plugin_name; ?>-options[intro-text]" name="<?php echo $this->plugin_name; ?>-options[intro-text]" value="<?php echo esc_attr( $option ); ?>"><?php
 
 	} // display_options_field()
 
@@ -218,16 +322,48 @@ class Smooch_Admin {
 		$valid = array();
 
 		if ( isset( $input['app-token'] ) ) {
-
 			$app_token 			= trim( $input['app-token'] );
 			$valid['app-token'] 	= sanitize_text_field( $app_token );
 
 			if ( $valid['app-token'] != $input['app-token'] ) {
-
 				add_settings_error( 'app-token', 'app-token-error', __( 'App token error.', 'smooch-wordpress' ), 'error' );
-
 			}
+		}
 
+		if ( isset( $input['header-text'] ) ) {
+			$app_token 			= trim( $input['header-text'] );
+			$valid['header-text'] 	= sanitize_text_field( $app_token );
+
+			if ( $valid['header-text'] != $input['header-text'] ) {
+				add_settings_error( 'header-text', 'header-text-error', __( 'Header text error.', 'smooch-wordpress' ), 'error' );
+			}
+		}
+
+		if ( isset( $input['input-placeholder'] ) ) {
+			$app_token 			= trim( $input['input-placeholder'] );
+			$valid['input-placeholder'] 	= sanitize_text_field( $app_token );
+
+			if ( $valid['input-placeholder'] != $input['input-placeholder'] ) {
+				add_settings_error( 'input-placeholder', 'input-placeholder-error', __( 'Input placeholder error.', 'smooch-wordpress' ), 'error' );
+			}
+		}
+
+		if ( isset( $input['send-button-text'] ) ) {
+			$app_token 			= trim( $input['send-button'] );
+			$valid['send-button'] 	= sanitize_text_field( $app_token );
+
+			if ( $valid['send-button'] != $input['send-button'] ) {
+				add_settings_error( 'send-button', 'send-button-error', __( 'Send button error.', 'smooch-wordpress' ), 'error' );
+			}
+		}
+
+		if ( isset( $input['intro-text'] ) ) {
+			$app_token 			= trim( $input['intro-text'] );
+			$valid['intro-text'] 	= sanitize_text_field( $app_token );
+
+			if ( $valid['intro-text'] != $input['intro-text'] ) {
+				add_settings_error( 'intro-text', 'intro-text-error', __( 'Intro text error.', 'smooch-wordpress' ), 'error' );
+			}
 		}
 
 		return $valid;
