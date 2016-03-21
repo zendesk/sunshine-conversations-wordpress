@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://twitter.com/gozmike
+ * @link       https://twitter.com/smoochlabs
  * @since      1.0.0
  *
  * @package    Smooch
@@ -18,7 +18,7 @@
  *
  * @package    Smooch
  * @subpackage Smooch/public
- * @author     Mike Gozzo <mike@smooch.io>
+ * @author     Smooch <hello@smooch.io>
  */
 class Smooch_Public {
 
@@ -119,18 +119,39 @@ class Smooch_Public {
 		 */
 		$options = get_option( $this->plugin_name . '-options' );	?>
 		<!-- SK Init -->
-		<script>Smooch.init(
+		<script>
+		var decodeEntities = (function() {
+		  // this prevents any overhead from creating the object each time
+		  var element = document.createElement('div');
+
+		  function decodeHTMLEntities (str) {
+		    if(str && typeof str === 'string') {
+		      // strip script/html tags
+		      str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+		      str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+		      element.innerHTML = str;
+		      str = element.textContent;
+		      element.textContent = '';
+		    }
+
+		    return str;
+		  }
+
+		  return decodeHTMLEntities;
+		})();
+
+		Smooch.init(
 			{
-				appToken: '<?php echo($options['app-token']);?>',
+				appToken: decodeEntities('<?php echo(htmlentities($options['app-token'], ENT_QUOTES));?>'),
 			    customText: {
-        			headerText: '<?php echo($options['header-text']);?>',
-        			inputPlaceholder: '<?php echo($options['input-placeholder']);?>',
-        			sendButtonText: '<?php echo($options['send-button-text']);?>',
-        			introText: '<?php echo($options['intro-text']);?>'
+        			headerText: decodeEntities('<?php echo(htmlentities($options['header-text'], ENT_QUOTES));?>'),
+        			inputPlaceholder: decodeEntities('<?php echo(htmlentities($options['input-placeholder'], ENT_QUOTES));?>'),
+        			sendButtonText: decodeEntities('<?php echo(htmlentities($options['send-button-text'], ENT_QUOTES));?>'),
+        			introText: decodeEntities('<?php echo(htmlentities($options['intro-text'], ENT_QUOTES));?>')
     			}
 			});
 		</script>;
 
 		<?php
-	}	
+	}
 }

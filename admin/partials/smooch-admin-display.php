@@ -5,7 +5,7 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://twitter.com/gozmike
+ * @link       https://twitter.com/smoochlabs
  * @since      1.0.0
  *
  * @package    Smooch
