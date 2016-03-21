@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://twitter.com/gozmike
+ * @link       https://twitter.com/smoochlabs
  * @since      1.0.0
  *
  * @package    Smooch
@@ -18,7 +18,7 @@
  *
  * @package    Smooch
  * @subpackage Smooch/admin
- * @author     Mike Gozzo <mike@smooch.io>
+ * @author     Smooch <hello@smooch.io>
  */
 class Smooch_Admin {
 
@@ -117,7 +117,7 @@ class Smooch_Admin {
 			array( $this, 'options_page' )
 		);
 
-	} // add_menu()	
+	} // add_menu()
 
 	public function options_page() {
 
@@ -132,7 +132,7 @@ class Smooch_Admin {
 
 		?></form><?php
 
-	} // options_page()	
+	} // options_page()
 
 	/**
 	 * Registers plugin settings, sections, and fields
@@ -209,7 +209,7 @@ class Smooch_Admin {
 	 * @return 		mixed 						The settings section
 	 */
 	public function display_options_section( $params ) {
-		?> 
+		?>
 		<p>Smooch lets you speak to your web visitors or app users from your inbox, Slack, Help Scout or favourite CRM. This plugin makes connecting your WordPress site to Smooch a breeze.</p>
 		<p>It's free to use on the web. Get an app token by logging in (or signing up for free) at <a href="https://app.smooch.io">app.smooch.io</a>. Paste this token into the field below and you'll be ready for action.</p>
 		<?php

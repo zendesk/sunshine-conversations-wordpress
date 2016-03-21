@@ -3,7 +3,7 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://twitter.com/gozmike
+ * @link       https://twitter.com/smoochlabs
  * @since      1.0.0
  *
  * @package    Smooch
@@ -18,7 +18,7 @@
  * @since      1.0.0
  * @package    Smooch
  * @subpackage Smooch/includes
- * @author     Mike Gozzo <mike@smooch.io>
+ * @author     Smooch <hello@smooch.io>
  */
 class Smooch_Activator {
 

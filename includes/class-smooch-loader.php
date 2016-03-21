@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://twitter.com/gozmike
+ * @link       https://twitter.com/smoochlabs
  * @since      1.0.0
  *
  * @package    Smooch
@@ -19,7 +19,7 @@
  *
  * @package    Smooch
  * @subpackage Smooch/includes
- * @author     Mike Gozzo <mike@smooch.io>
+ * @author     Smooch <hello@smooch.io>
  */
 class Smooch_Loader {
 
