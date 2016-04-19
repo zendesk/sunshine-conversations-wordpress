@@ -349,11 +349,11 @@ class Smooch_Admin {
 		}
 
 		if ( isset( $input['send-button-text'] ) ) {
-			$app_token 			= trim( $input['send-button'] );
-			$valid['send-button'] 	= sanitize_text_field( $app_token );
+			$app_token 			= trim( $input['send-button-text'] );
+			$valid['send-button-text'] 	= sanitize_text_field( $app_token );
 
-			if ( $valid['send-button'] != $input['send-button'] ) {
-				add_settings_error( 'send-button', 'send-button-error', __( 'Send button error.', 'smooch-wordpress' ), 'error' );
+			if ( $valid['send-button-text'] != $input['send-button-text'] ) {
+				add_settings_error( 'send-button-text', 'send-button-error', __( 'Send button error.', 'smooch-wordpress' ), 'error' );
 			}
 		}
 
