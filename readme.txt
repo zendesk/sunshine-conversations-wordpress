@@ -56,8 +56,8 @@ If you want to add your little something to this plugin, visit our github page t
 == Screenshots ==
 
 1. Improve your visitors experience with our web messaging tool
-2. Reply to them from the tools you're using in your company like Slack, HelpScout, Front, Zendesk...
-3. Send action buttons and automated messages to proactively converse with your visitors
+2. Reply to them from the tools you're using everyday like Slack, HelpScout, Front, Zendesk...
+3. Send automated messages to proactively converse with your visitors
 4. Configure the widget from the plugin settings
 
 == Changelog ==
