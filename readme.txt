@@ -1,4 +1,4 @@
-=== Smooch.io - Live Chat Messaging for Support ===
+=== Smooch.io - Live Chat Messaging for your Website ===
 Contributors: smoochio
 Tags: live chat, messaging, support, Slack, communication
 Requires at least: 3.0.1
