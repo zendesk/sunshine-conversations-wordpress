@@ -46,7 +46,7 @@ Please follow [the instructions on our documentation](http://docs.smooch.io) for
 
 = How to contribute to this plugin? =
 
-If you want to add your little something to this plugin, visit our github page to contribute!
+If you want to add your little something to this plugin, visit our [github page](https://github.com/smooch/smooch-wordpress) to contribute!
 
 == Screenshots ==
 
