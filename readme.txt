@@ -11,23 +11,18 @@ Smooch lets you speak to your web visitors or app users from your inbox, Slack, 
 
 == Description ==
 
-[Smooch](http://smooch.io) is a messaging platform for apps and websites allowing you to communicate with customers in real-time. It’s the simplest and quickest way to have personal, rich conversations with visitors of your Wordpress website.
+[Smooch](http://smooch.io) is a messaging platform for apps and websites that allows you to communicate with customers in real-time. It’s the simplest and quickest way to have personal, rich conversations with visitors of your WordPress website.
 
-This Wordpress plugin offers a seamless one-click integration of our messaging platform and will add the web plugin at the bottom of your website. You reply to customers using your favorite tool of choice - like Slack, HipChat, Front, HelpScout or Zendesk.
-
-- Talk to your visitors, provide help and convert them to customers. 100% free!
-- Reply from the tools you love: Slack, HipChat, Front, HelpScout or Zendesk just to name a few
-- Encourage actions by sending personal automated messages
-
-## Feature-packed messaging
+This WordPress plugin offers a seamless one-click integration of our messaging platform and will add the web plugin at the bottom of your website. You reply to customers using your favorite tool of choice - like Slack, Front, HelpScout, Hip Chat, or Zendesk.
 
 Smooch enables you to:
 
 - Start conversations with automated messages: Proactively send targeted messages to your visitors triggered by behaviour and actions on your online store.
-- Connect with the tools you love: Smooch integrations - like HipChat and Slack - bring your customer and team communications together, in one place. It also works perfectly with HelpScout, Zendesk, and even regular old email.
+- Connect with the tools you love: Smooch integrations - like Front and Slack - bring your customer and team communications together, in one place. It also works perfectly with HelpScout, Zendesk, and even regular old email.
 - Collaborate as a team: Our integrations bring your customer and team communications together in one place making it easy for your whole team to convert visitors into customers.
 - Get insights on your visitors: See detailed information about every visitor that starts a conversation, helping you provide fast personalized answers. You can even track your own custom properties.
 - Customize the widget at your will: Languages, colors, CSS. You’re in control to make it look the way you want.
+- Integrate with Stripe to collect payment from your users and sell products or services - directly from within the conversation.
 
 == Installation ==
 
