@@ -7,7 +7,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Smooch lets you speak to your web visitors or app users from your inbox, Slack, Help Scout or favorite CRM. This plugin makes connecting your WordPress site to Smooch a breeze.
+Smooch lets you speak to your web visitors from your inbox, Slack, Front, Help Scout or favorite CRM. 
 
 == Description ==
 
