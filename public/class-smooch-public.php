@@ -95,8 +95,8 @@ class Smooch_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_script( 'Smooch-CDN', 'https://cdn.smooch.io/smooch.min.js', array( 'jquery' ), $this->version, true );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/smooch-public.js', array( 'Smooch-CDN' ), $this->version, false );
+		wp_enqueue_script( 'Smooch-CDN', 'https://cdn.smooch.io/smooch.min.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/smooch-public.js', array( 'Smooch-CDN' ), null, true );
 	}
 
 	/**
@@ -147,7 +147,7 @@ class Smooch_Public {
         			headerText: decodeEntities('<?php echo(htmlentities($options['header-text'], ENT_QUOTES));?>'),
         			inputPlaceholder: decodeEntities('<?php echo(htmlentities($options['input-placeholder'], ENT_QUOTES));?>'),
         			sendButtonText: decodeEntities('<?php echo(htmlentities($options['send-button-text'], ENT_QUOTES));?>'),
-        			introText: decodeEntities('<?php echo(htmlentities($options['intro-text'], ENT_QUOTES));?>')
+        			introductionText: decodeEntities('<?php echo(htmlentities($options['intro-text'], ENT_QUOTES));?>')
     			}
 			});
 		</script>
