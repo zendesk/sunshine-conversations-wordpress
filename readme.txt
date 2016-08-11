@@ -3,11 +3,11 @@ Contributors: smoochio
 Tags: live chat, messaging, support, Slack, communication
 Requires at least: 3.0.1
 Tested up to: 4.5
-Stable tag: 1.0.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Smooch lets you speak to your web visitors from your inbox, Slack, Front, Help Scout or favorite CRM. 
+Smooch lets you speak to your web visitors from your inbox, Slack, Front, Help Scout or favorite CRM.
 
 == Description ==
 
@@ -57,7 +57,19 @@ If you want to add your little something to this plugin, visit our [github page]
 
 == Changelog ==
 
+= 1.1.1 =
+* Display the Introduction Text set in the settings
+
+= 1.1.0 =
+* Remove the extra ";" at the end of the page
+
 = 1.0 =
 * First stable version
 
-`<?php code(); // goes in backticks ?>`
+== Upgrade Notice ==
+
+= 1.1.1 =
+Bug fixes (display the Introduction Text set in the settings)
+
+= 1.1.0 =
+Bug fixes (remove the extra ";" at the end of the page)
