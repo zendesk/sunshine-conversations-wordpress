@@ -199,6 +199,14 @@ class Smooch_Admin {
 			$this->plugin_name,
 			$this->plugin_name . '-basic-info'
 		);
+
+		add_settings_field(
+			'intro-app-text',
+			apply_filters( $this->plugin_name . '-intro-app-text-label', __( 'Intro App Text', 'smooch-wordpress' ) ),
+			array( $this, 'intro_app_text_field' ),
+			$this->plugin_name,
+			$this->plugin_name . '-basic-info'
+		);
 	} // register_settings()
 
 	/**
@@ -311,9 +319,28 @@ class Smooch_Admin {
 	} // display_options_field()
 
 	/**
+	 * Creates a settings field
+	 *
+	 * @since 		1.1.3
+	 * @return 		mixed 			The settings field
+	 */
+	public function intro_app_text_field() {
+
+		$options 	= get_option( $this->plugin_name . '-options' );
+		$option 	= 'Message us below or from your favorite app.';
+
+		if ( ! empty( $options['intro-app-text'] ) ) {
+			$option = $options['intro-app-text'];
+		}
+
+		?><input type="text" id="<?php echo $this->plugin_name; ?>-options[intro-app-text]" name="<?php echo $this->plugin_name; ?>-options[intro-app-text]" value="<?php echo esc_attr( $option ); ?>"><?php
+
+	} // display_options_field()
+
+	/**
 	 * Validates saved options
 	 *
-	 * @since 		1.0.0
+	 * @since 		1.1.3
 	 * @param 		array 		$input 			array of submitted plugin options
 	 * @return 		array 						array of validated plugin options
 	 */
@@ -363,6 +390,15 @@ class Smooch_Admin {
 
 			if ( $valid['intro-text'] != $input['intro-text'] ) {
 				add_settings_error( 'intro-text', 'intro-text-error', __( 'Intro text error.', 'smooch-wordpress' ), 'error' );
+			}
+		}
+
+		if ( isset( $input['intro-app-text'] ) ) {
+			$app_token 			= trim( $input['intro-app-text'] );
+			$valid['intro-app-text'] 	= sanitize_text_field( $app_token );
+
+			if ( $valid['intro-app-text'] != $input['intro-app-text'] ) {
+				add_settings_error( 'intro-app-text', 'intro-app-text-error', __( 'Intro App text error.', 'smooch-wordpress' ), 'error' );
 			}
 		}
 

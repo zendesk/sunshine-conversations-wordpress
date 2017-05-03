@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://twitter.com/smoochlabs
- * @since      1.1.2
+ * @since      1.1.3
  *
  * @package    Smooch
  * @subpackage Smooch/public
@@ -162,7 +162,8 @@ class Smooch_Public {
 		        			headerText: decodeEntities('<?php echo(htmlentities($options['header-text'], ENT_QUOTES));?>'),
 		        			inputPlaceholder: decodeEntities('<?php echo(htmlentities($options['input-placeholder'], ENT_QUOTES));?>'),
 		        			sendButtonText: decodeEntities('<?php echo(htmlentities($options['send-button-text'], ENT_QUOTES));?>'),
-		        			introText: decodeEntities('<?php echo(htmlentities($options['intro-text'], ENT_QUOTES));?>')
+		        			introductionText: decodeEntities('<?php echo(htmlentities($options['intro-text'], ENT_QUOTES));?>'),
+									introAppText: decodeEntities('<?php echo(htmlentities($options['intro-app-text'], ENT_QUOTES));?>')
 		    			}
     			});
         });
