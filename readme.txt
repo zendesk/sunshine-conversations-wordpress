@@ -3,7 +3,7 @@ Contributors: smoochio, valeriosza
 Tags: live chat, messaging, support, Slack, communication
 Requires at least: 3.0.1
 Tested up to: 4.6
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,10 @@ If you want to add your little something to this plugin, visit our [github page]
 4. Configure the widget from the plugin settings
 
 == Changelog ==
+
+= 1.1.3 =
+* Fix a regression not displaying the Introduction Text correctly
+* Add the IntroAppText in the customizable fields
 
 = 1.1.2 =
 * Now saves the user name logged on to WordPress automatically.

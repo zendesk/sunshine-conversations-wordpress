@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://twitter.com/smoochlabs
- * @since      1.1.2
+ * @since      1.1.3
  *
  * @package    Smooch
  * @subpackage Smooch/public
