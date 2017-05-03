@@ -162,7 +162,8 @@ class Smooch_Public {
 		        			headerText: decodeEntities('<?php echo(htmlentities($options['header-text'], ENT_QUOTES));?>'),
 		        			inputPlaceholder: decodeEntities('<?php echo(htmlentities($options['input-placeholder'], ENT_QUOTES));?>'),
 		        			sendButtonText: decodeEntities('<?php echo(htmlentities($options['send-button-text'], ENT_QUOTES));?>'),
-		        			introText: decodeEntities('<?php echo(htmlentities($options['intro-text'], ENT_QUOTES));?>')
+		        			introductionText: decodeEntities('<?php echo(htmlentities($options['intro-text'], ENT_QUOTES));?>'),
+									introAppText: decodeEntities('<?php echo(htmlentities($options['intro-app-text'], ENT_QUOTES));?>')
 		    			}
     			});
         });
